@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài tập về nhà 4 - Box Model & Typography</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="profile-card">
+    <header class="card-header">
+      <h1>Đăng ký tham gia</h1>
+      <p>Vui lòng điền thông tin của bạn dưới đây</p>
+    </header>
+
+    <form class="card-body" action="#" method="post">
+      <div class="form-group">
+        <label for="fullname">Họ và tên</label>
+        <input type="text" id="fullname" name="fullname" class="input-field"
+               placeholder="VD: Nguyễn Văn A" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Địa chỉ Email</label>
+        <input type="email" id="email" name="email" class="input-field"
+               placeholder="name@example.com" required>
+      </div>
+
+      <button type="submit" class="btn-submit">Hoàn tất đăng ký</button>
+    </form>
+  </main>
+</body>
+</html>
