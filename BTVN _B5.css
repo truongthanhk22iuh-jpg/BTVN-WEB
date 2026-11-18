@@ -1,0 +1,344 @@
+/* 1. KHAI BAO CAC BIEN DUNG CHUNG */
+:root {
+    --main-color: #263b35;
+    --main-light: #e8efeb;
+    --sale-color: #e65353;
+    --text-color: #26312d;
+    --gray-color: #777777;
+    --white-color: #ffffff;
+    --page-color: #f7f8f6;
+
+    --space-small: 10px;
+    --space-medium: 20px;
+    --space-large: 40px;
+
+    --radius-small: 8px;
+    --radius-medium: 16px;
+    --radius-large: 24px;
+}
+
+/* 2. CAI DAT CHUNG */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
+    background-color: var(--white-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* 3. HEADER - POSITION STICKY */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--white-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.header-content {
+    min-height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--main-color);
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--sale-color);
+}
+
+.navigation {
+    display: flex;
+    gap: var(--space-large);
+}
+
+.navigation a {
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.navigation a:hover {
+    color: var(--sale-color);
+}
+
+.header-button,
+.main-button {
+    display: inline-block;
+    color: var(--white-color);
+    background-color: var(--main-color);
+    padding: 11px 22px;
+    border-radius: var(--radius-small);
+}
+
+.header-button:hover,
+.main-button:hover {
+    background-color: var(--sale-color);
+}
+
+/* 4. HERO SECTION */
+.hero {
+    padding: 60px 0;
+    background-color: var(--main-light);
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-large);
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.small-title {
+    color: var(--sale-color);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    margin: var(--space-medium) 0;
+    color: var(--main-color);
+    font-size: 46px;
+    line-height: 1.2;
+}
+
+.hero-description {
+    max-width: 480px;
+    margin-bottom: 25px;
+    color: var(--gray-color);
+}
+
+.hero-image {
+    flex: 1;
+}
+
+.hero-image img {
+    display: block;
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    border-radius: var(--radius-large);
+}
+
+/* 5. DANH SACH SAN PHAM */
+.products-section {
+    padding: 65px 0;
+    background-color: var(--page-color);
+}
+
+.section-heading {
+    margin-bottom: var(--space-large);
+    text-align: center;
+}
+
+.section-heading h2 {
+    margin: var(--space-small) 0;
+    color: var(--main-color);
+    font-size: 32px;
+}
+
+.section-heading p:last-child {
+    color: var(--gray-color);
+}
+
+/* Hien thi 3 cot, tu dong xuong hang */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* CARD: POSITION RELATIVE */
+.product-card {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--white-color);
+    border-radius: var(--radius-medium);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+}
+
+.product-card img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+/* BADGE SALE: POSITION ABSOLUTE */
+.sale-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 2;
+    padding: 6px 10px;
+    color: var(--white-color);
+    background-color: var(--sale-color);
+    border-radius: var(--radius-small);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* NUT YEU THICH: POSITION ABSOLUTE */
+.favorite {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 2;
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 50%;
+    color: var(--sale-color);
+    background-color: var(--white-color);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.product-info {
+    padding: var(--space-medium);
+}
+
+.product-info h3 {
+    min-height: 48px;
+    margin-bottom: var(--space-small);
+    font-size: 18px;
+}
+
+.price {
+    margin-bottom: 15px;
+    color: var(--sale-color);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.price span {
+    margin-left: 5px;
+    color: var(--gray-color);
+    font-size: 13px;
+    font-weight: normal;
+    text-decoration: line-through;
+}
+
+.buy-button {
+    display: block;
+    padding: 10px;
+    color: var(--white-color);
+    background-color: var(--main-color);
+    border-radius: var(--radius-small);
+    text-align: center;
+}
+
+.buy-button:hover {
+    background-color: var(--sale-color);
+}
+
+/* 6. FOOTER */
+.footer {
+    padding: 35px 0;
+    color: var(--white-color);
+    background-color: var(--main-color);
+    text-align: center;
+}
+
+.footer h2 {
+    margin-bottom: var(--space-small);
+}
+
+.footer p {
+    margin-bottom: 6px;
+}
+
+.copyright {
+    margin-top: var(--space-medium);
+    font-size: 13px;
+}
+
+/* 7. NUT BACK TO TOP - POSITION FIXED */
+.back-to-top {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 999;
+    display: flex;
+    width: 45px;
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+    color: var(--white-color);
+    background-color: var(--sale-color);
+    border-radius: 50%;
+    font-size: 25px;
+}
+
+/* 8. RESPONSIVE - PHU HOP MAN HINH NHO */
+@media (max-width: 768px) {
+    .navigation {
+        gap: var(--space-medium);
+    }
+
+    .hero-content {
+        flex-direction: column;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .product-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .header-content {
+        flex-wrap: wrap;
+        padding: var(--space-small) 0;
+    }
+
+    .navigation {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        margin-top: var(--space-small);
+    }
+
+    .header-button {
+        padding: 8px 12px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .product-list {
+        grid-template-columns: 1fr;
+    }
+}
