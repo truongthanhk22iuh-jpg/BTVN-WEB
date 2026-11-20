@@ -1,0 +1,52 @@
+/* BTVN 6 - Bố cục Flexbox */
+
+/* Container sử dụng Flexbox để sắp xếp 4 thẻ */
+.layout {
+    min-height: 100vh;
+    display: flex;                 /* Kích hoạt Flexbox */
+    justify-content: center;       /* Căn giữa các thẻ theo chiều ngang */
+    align-items: center;           /* Căn giữa các thẻ theo chiều dọc */
+    gap: 24px;                      /* Tạo khoảng cách giữa các thẻ */
+    flex-wrap: wrap;                /* Cho phép thẻ xuống dòng khi thiếu chỗ */
+    padding: 24px;
+    box-sizing: border-box;
+    background-color: #f3f4f6;
+}
+
+/* Thiết kế từng thẻ */
+.card {
+    flex: 0 1 180px;                /* Đặt kích thước cơ sở và cho phép co lại */
+    min-height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 12px;
+    background: #2563eb;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Màn hình mobile: ưu tiên bố cục 2x2 */
+@media (max-width: 600px) {
+    .layout {
+        align-content: center;
+        gap: 16px;
+    }
+
+    .card {
+        flex: 0 1 calc(50% - 16px);
+        min-height: 110px;
+        font-size: 20px;
+    }
+}
+
+/* Điện thoại rất hẹp: chuyển thành một cột */
+@media (max-width: 360px) {
+    .card {
+        flex-basis: 100%;
+    }
+}
