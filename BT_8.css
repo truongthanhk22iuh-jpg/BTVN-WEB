@@ -1,0 +1,157 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #252525;
+            line-height: 1.6;
+        }
+
+        .header {
+            background-color: #183b56;
+            color: white;
+            padding: 18px 8%;
+        }
+
+        .header h2 {
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .menu {
+            margin-top: 10px;
+        }
+
+        .menu a {
+            color: #e8eef2;
+            text-decoration: none;
+            margin-right: 22px;
+            font-size: 14px;
+        }
+
+        .menu a:hover {
+            color: #ffd166;
+        }
+
+        .container {
+            width: 84%;
+            max-width: 1050px;
+            margin: 35px auto;
+        }
+
+        .intro {
+            background-color: white;
+            padding: 28px;
+            border-left: 5px solid #2a7894;
+            margin-bottom: 28px;
+        }
+
+        .intro h1 {
+            color: #183b56;
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .intro p {
+            color: #666;
+            font-size: 15px;
+        }
+
+        .list-title {
+            font-size: 21px;
+            color: #183b56;
+            margin-bottom: 15px;
+        }
+
+        .activity-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .activity {
+            background-color: white;
+            border: 1px solid #e1e5e8;
+            padding: 20px;
+            transition: 0.25s;
+            animation: appear 0.6s ease both;
+        }
+
+        /* Chọn thẻ thứ hai và thứ ba để tạo thời gian xuất hiện lần lượt */
+        .activity:nth-child(2) {
+            animation-delay: 0.15s;
+        }
+
+        .activity:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .activity:hover {
+            border-color: #2a7894;
+            transform: translateY(-4px);
+        }
+
+        .activity h3 {
+            color: #183b56;
+            font-size: 18px;
+            margin-bottom: 9px;
+        }
+
+        .activity p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            display: inline-block;
+            color: #24647b;
+            background-color: #e8f3f6;
+            padding: 4px 10px;
+            font-size: 12px;
+        }
+
+        /* Dấu gạch nhỏ đứng trước nhãn */
+        .tag::before {
+            content: "• ";
+            color: #2a7894;
+            font-weight: bold;
+        }
+
+        .footer {
+            text-align: center;
+            color: #777;
+            font-size: 13px;
+            padding: 22px;
+            margin-top: 35px;
+            border-top: 1px solid #ddd;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 750px) {
+            .container {
+                width: 92%;
+            }
+
+            .activity-list {
+                grid-template-columns: 1fr;
+            }
+
+            .intro h1 {
+                font-size: 24px;
+            }
+        }
